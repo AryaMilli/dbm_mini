@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Electronics Laboratory Inventory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e0ffe0; /* Light Green Background Color */
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .form-group {
+        margin: 10px 0;
+      }
+      .form-group label {
+        display: block;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group button {
+        background: #333;
+        color: #fff;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-right: 10px; /* Added margin to the right of the buttons */
+      }
+      /* Added gray color to the margin */
+      .form-group button:hover {
+        background: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Electronics Laboratory Inventory Form</h2>
+    <form action="#" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="equipment_name">Equipment Name:</label>
+        <input type="text" id="equipment_name" name="equipment_name" required />
+      </div>
+      <div class="form-group">
+        <label for="registration_number">Registration Number:</label>
+        <input
+          type="text"
+          id="registration_number"
+          name="registration_number"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="cost_of_purchase">Cost of Purchase (INR):</label>
+        <input
+          type="number"
+          id="cost_of_purchase"
+          name="cost_of_purchase"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="user_permission">Who is allowed to use it:</label>
+        <select id="user_permission" name="user_permission" required>
+          <option value="students">Students</option>
+          <option value="faculty">Faculty</option>
+          <option value="staff">Staff</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
